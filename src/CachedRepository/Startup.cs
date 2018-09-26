@@ -36,6 +36,7 @@ namespace CachedRepository
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		// NOTE: This is the middleware configuration
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
