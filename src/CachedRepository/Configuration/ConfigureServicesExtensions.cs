@@ -17,7 +17,9 @@ namespace CachedRepository.Configuration
 		public static IServiceCollection ConfigureDatabase(this IServiceCollection services, IConfiguration config)
 		{
 			//services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-			services.AddScoped<IRepository<VehicleManufacturer>, VehicleManufacturersRepository>();
+			services.AddScoped<IRepository<VehicleManufacturer>, CachedVehicleManufactersRepository>();
+			services.AddScoped(typeof(EfRepository<>));
+			services.AddScoped<VehicleManufacturersRepository>();
 
 			services.AddEntityFrameworkSqlite();
 
