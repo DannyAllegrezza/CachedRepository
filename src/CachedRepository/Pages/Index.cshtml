@@ -8,10 +8,11 @@
 <div class="row">
     <div class="col-md-12">
         <h2>Vehicle Manufacturers</h2>
+        <h2>Load time: @Model.ElapsedTimeInMilliseconds ms</h2>
         <ul>
             @foreach (var manufacturer in Model.Manufacturers)
             {
-                <li>@manufacturer.Name | @manufacturer.Models</li>
+                <li>@manufacturer.Name | @manufacturer.Models.Count</li>
             }
         </ul>
     </div>

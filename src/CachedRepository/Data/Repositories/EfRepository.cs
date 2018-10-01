@@ -27,7 +27,7 @@ namespace CachedRepository.Data.Repositories
 			_dbContext.SaveChanges();
 		}
 
-		public IEnumerable<T> GetAll()
+		public virtual IEnumerable<T> GetAll()
 		{
 			return _dbContext.Set<T>().AsEnumerable();
 		}

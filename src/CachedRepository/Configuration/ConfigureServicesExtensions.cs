@@ -1,4 +1,5 @@
 ﻿using CachedRepository.Data;
+using CachedRepository.Data.Models;
 using CachedRepository.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +16,8 @@ namespace CachedRepository.Configuration
 	{
 		public static IServiceCollection ConfigureDatabase(this IServiceCollection services, IConfiguration config)
 		{
-			services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+			//services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+			services.AddScoped<IRepository<VehicleManufacturer>, VehicleManufacturersRepository>();
 
 			services.AddEntityFrameworkSqlite();
 
